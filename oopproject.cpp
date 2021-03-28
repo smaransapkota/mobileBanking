@@ -32,30 +32,26 @@ int main()
         case 3:
             forgetPassword();
             break;
-        
-        case 4:
-            cout<<"Thanks for Using Login Page\n";
-            break;
-        
+
         default:
-            cout<<"Wrong Choice Selected. \n";
+            cout<<"Wrong Choice Selected. Press Any Key To Redirect in MainMenu \n";
             main();
-    
-    }       
+
+    }
 }
 
-void registter()
+void registeer()
 {
     string reguser, regpass;
     system("cls");
-    cout<<"Enter the username : " ;
+    cout<<"Enter the Username : " ;
     cin>>reguser;
     cout<<"Enter the Password : ";
     cin >> regpass;
 
     ofstream reg("database.txt", ios::app);
     reg<<reguser<<' '<<regpass<<endl;
-    system('cls');
+    system("cls");
     cout<<"Registration is Succesful\n";
     main();
 }
@@ -64,9 +60,9 @@ void login()
     int exist;
     string user, pass, u, p;
     system("cls");
-    cout<<"Enter the use name : ";
+    cout<<"Enter the UserName : ";
     cin>>user;
-    cout<<"Enter the password :";
+    cout<<"Enter the Password :";
     cin>>pass;
 
     ifstream input("database.txt");
@@ -96,7 +92,7 @@ void login()
     }
 }
 
-void forgetpassword()
+void forgetPassword()
 {
     int ch;
     system("cls");
@@ -108,6 +104,7 @@ void forgetpassword()
     switch(ch)
     {
         case 1:
+        {
             int ex = 0;
             string searchuser,su,sp;
             cout<<"Enter Your Remembered username : ";
@@ -121,7 +118,7 @@ void forgetpassword()
                      ex=1;
                      break;
                  }
-                
+
             }
             searchu.close();
             if (ex ==1 )
@@ -141,13 +138,15 @@ void forgetpassword()
 
             }
             break;
+        }
 
         case 2:
+        {
             int exi = 0;
             string searchpass, su2, sp2;
             cout<<"Enter the Remembered Password : ";
             cin>>searchpass;
-            
+
             ifstream searchp("database.txt");
             while(searchp>>su2>>sp2)
             {
@@ -167,14 +166,19 @@ void forgetpassword()
                     main();
                 }
             }
+        }
         case 3:
+        {
             main();
             break;
+        }
 
-        default : 
+        default :
+        {
             cout<<"Wrong choice given. Enter any key to continue.";
             cin.get();
             cin.get();
             forgetPassword();
+        }
     }
 }
