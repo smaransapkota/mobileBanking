@@ -23,6 +23,7 @@ class BankDetails : public User
 protected:
     long long int acNumber;
     unsigned int balance;
+    long long int reciverBD;
 public:
     void sendMoney(unsigned int);
     unsigned int loadEsewa(unsigned int);
@@ -295,11 +296,14 @@ void ForgetPassword::forgetPassword()
 
 void BankDetails::sendMoney(unsigned int money){
     if(balance < money){
-        cout<<"Dai Paisa Xaina";
+
+        cout<<"You donot have enough balance in your account"<<endl;
     }
     else{
+            cout<<"Enter benificiary bank details : ";
+            cin>>reciverBD;
             balance -= money;
-            cout<<"Dai Rs."<<money<<" Chuna Lagyo"<<endl;
+            cout<<"Dear, "<< user <<"Rs."<<money<<"has been transferred successfully from A/C"<<acNumber<<endl;
     }
 
 
@@ -334,6 +338,7 @@ do{
             {
 
             unsigned int money;
+            cout<<"Enter the amount : ";
             cin>>money;
             bnk1.sendMoney(money);
             }
