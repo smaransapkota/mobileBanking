@@ -314,7 +314,7 @@ unsigned int BankDetails::loadEsewa(unsigned int money){
     }
     else{
             balance -= money;
-            cout<<"Dai Rs."<<money<<" Esewa Load Vayo"<<endl;
+            cout<<"Rs."<<money<<" Esewa has been loaded successfully"<<endl;
     }
 
 }
