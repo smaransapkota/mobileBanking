@@ -228,7 +228,7 @@ void ForgetPassword::forgetPassword()
         searchu.close();
         if (ex == 1)
         {
-            cout << "\nAccount Found !\n";
+            cout << "\nDear "<<su<<", Account Found !\n";
             cout << "Your password is : " << sp;
             cin.get();
             cin.get();
